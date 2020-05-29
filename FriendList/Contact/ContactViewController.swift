@@ -8,11 +8,16 @@
 
 import UIKit
 
-class ContactViewController: UIViewController {
+class ContactViewController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.configureUI()
+    }
+    
+    func configureUI() {
+        
     }
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A38FF8028664F58244DC43E8 /* Pods_FriendList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4908F4F336AD70E705B14924 /* Pods_FriendList.framework */; };
+		E89F1C0E2480E7A5003CCB61 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C0D2480E7A5003CCB61 /* BaseViewController.swift */; };
 		E8F8120B247F8B0900D262E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8120A247F8B0900D262E8 /* AppDelegate.swift */; };
 		E8F8120D247F8B0900D262E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8120C247F8B0900D262E8 /* SceneDelegate.swift */; };
 		E8F8120F247F8B0900D262E8 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8120E247F8B0900D262E8 /* ContactViewController.swift */; };
@@ -23,6 +24,7 @@
 		1E08FCED2F175F4FAF2692B6 /* Pods-FriendList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendList.release.xcconfig"; path = "Target Support Files/Pods-FriendList/Pods-FriendList.release.xcconfig"; sourceTree = "<group>"; };
 		3E83007549A9AEF2489F7D70 /* Pods-FriendList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FriendList.debug.xcconfig"; path = "Target Support Files/Pods-FriendList/Pods-FriendList.debug.xcconfig"; sourceTree = "<group>"; };
 		4908F4F336AD70E705B14924 /* Pods_FriendList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FriendList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E89F1C0D2480E7A5003CCB61 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E8F81207247F8B0800D262E8 /* FriendList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F8120A247F8B0900D262E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8F8120C247F8B0900D262E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				E8F81218247F8B0A00D262E8 /* Info.plist */,
 				E8F8120A247F8B0900D262E8 /* AppDelegate.swift */,
+				E89F1C0D2480E7A5003CCB61 /* BaseViewController.swift */,
 				E8F8120C247F8B0900D262E8 /* SceneDelegate.swift */,
 				E8F8121E2480DFBC00D262E8 /* TabBarController.swift */,
 				E8F81213247F8B0A00D262E8 /* Assets.xcassets */,
@@ -251,6 +254,7 @@
 				E8F8121F2480DFBC00D262E8 /* TabBarController.swift in Sources */,
 				E8F812232480E01A00D262E8 /* TagViewController.swift in Sources */,
 				E8F8120B247F8B0900D262E8 /* AppDelegate.swift in Sources */,
+				E89F1C0E2480E7A5003CCB61 /* BaseViewController.swift in Sources */,
 				E8F812252480E02200D262E8 /* SettingViewController.swift in Sources */,
 				E8F8120D247F8B0900D262E8 /* SceneDelegate.swift in Sources */,
 			);
