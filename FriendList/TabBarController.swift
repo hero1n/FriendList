@@ -29,7 +29,10 @@ class TabBarController: UITabBarController {
         let settingViewController = SettingViewController()
         settingViewController.tabBarItem = UITabBarItem(title: "설정", image: UIImage(systemName: "gear"), tag: 4)
 
-        let tabBarList = [contactViewController, searchViewController, tagViewController, settingViewController]
+        let tabBarList = [UINavigationController(rootViewController: contactViewController),
+                          UINavigationController(rootViewController: searchViewController),
+                          UINavigationController(rootViewController: tagViewController),
+                          UINavigationController(rootViewController: settingViewController)]
         self.viewControllers = tabBarList
     }
 }
