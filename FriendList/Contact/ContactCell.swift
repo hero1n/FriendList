@@ -29,42 +29,42 @@ extension ContactCell {
 
 class ContactUserCell: UITableViewCell, ContactCell {
     
-    let titleLabel = UILabel().then {
+    lazy var titleLabel = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.textColor = .black
         $0.font = UIFont.systemFont(ofSize: 14.0)
     }
     
-    let descriptionLabel = UILabel().then {
+    lazy var descriptionLabel = UILabel().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.textColor = .systemGray
         $0.font = UIFont.systemFont(ofSize: 12.0)
     }
     
-    let profileImageView = UIImageView().then {
+    lazy var profileImageView = UIImageView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.contentMode = .scaleAspectFill
         $0.layer.cornerRadius = $0.frame.height / 2
         $0.clipsToBounds = true
     }
     
-    let phoneButton = UIButton().then {
+    lazy var phoneButton = UIButton().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.setImage(UIImage(systemName: "phone"), for: .normal)
     }
     
-    let mailButton = UIButton().then {
+    lazy var mailButton = UIButton().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.setImage(UIImage(systemName: "envelope"), for: .normal)
     }
     
-    let labelStackView = UIStackView().then {
+    lazy var labelStackView = UIStackView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.distribution = .fillProportionally
         $0.axis = .vertical
     }
     
-    let buttonStackView = UIStackView().then {
+    lazy var buttonStackView = UIStackView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.distribution = .fillProportionally
         $0.axis = .horizontal
@@ -113,15 +113,13 @@ class ContactUserCell: UITableViewCell, ContactCell {
         self.buttonStackView.snp.contentHuggingHorizontalPriority = 999
         
         self.profileImageView.snp.makeConstraints { (make) in
-            make.centerY.equalToSuperview()
             make.left.equalTo(16)
             make.top.equalTo(self.contentView.snp_topMargin)
             make.bottom.equalTo(self.contentView.snp_bottomMargin)
-            make.width.height.equalTo(30)
+            make.width.height.lessThanOrEqualTo(30)
         }
         
         self.labelStackView.snp.makeConstraints { (make) in
-            make.centerY.equalToSuperview()
             make.left.equalTo(self.profileImageView.snp_rightMargin).offset(16)
             make.right.equalTo(self.buttonStackView.snp_leftMargin).offset(-8)
             make.top.equalTo(self.contentView.snp_topMargin).offset(-4)
@@ -129,18 +127,17 @@ class ContactUserCell: UITableViewCell, ContactCell {
         }
         
         self.buttonStackView.snp.makeConstraints { (make) in
-            make.centerY.equalToSuperview()
             make.right.equalToSuperview().offset(-8)
             make.top.equalTo(self.contentView.snp_topMargin).offset(4)
             make.bottom.equalTo(self.contentView.snp_bottomMargin).offset(-4)
         }
         
         self.phoneButton.snp.makeConstraints { (make) in
-            make.width.height.equalTo(20)
+            make.width.height.lessThanOrEqualTo(20)
         }
         
         self.mailButton.snp.makeConstraints { (make) in
-            make.width.height.equalTo(20)
+            make.width.height.lessThanOrEqualTo(20)
         }
     }
 

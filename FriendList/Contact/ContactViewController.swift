@@ -39,7 +39,7 @@ class ContactViewController: BaseController {
         
         self.view.addSubview(self.tableView)
         self.tableView.snp.makeConstraints { (make) in
-            make.top.equalTo(self.searchBar.snp_bottomMargin).offset(16)
+            make.top.equalTo(self.searchBar.snp_bottomMargin).offset(30)
             make.left.right.bottom.equalToSuperview()
         }
     }
