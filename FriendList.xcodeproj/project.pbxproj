@@ -15,6 +15,7 @@
 		E89F1C1824812627003CCB61 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C1724812627003CCB61 /* UITableViewCell.swift */; };
 		E89F1C1B248135C8003CCB61 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C1A248135C8003CCB61 /* Debugging.swift */; };
 		E89F1C1D24814252003CCB61 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C1C24814252003CCB61 /* UITableView.swift */; };
+		E89F1C202482566E003CCB61 /* FriendInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C1F2482566E003CCB61 /* FriendInfoViewController.swift */; };
 		E8F8120B247F8B0900D262E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8120A247F8B0900D262E8 /* AppDelegate.swift */; };
 		E8F8120D247F8B0900D262E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8120C247F8B0900D262E8 /* SceneDelegate.swift */; };
 		E8F8120F247F8B0900D262E8 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8120E247F8B0900D262E8 /* ContactViewController.swift */; };
@@ -37,6 +38,7 @@
 		E89F1C1724812627003CCB61 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		E89F1C1A248135C8003CCB61 /* Debugging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debugging.swift; sourceTree = "<group>"; };
 		E89F1C1C24814252003CCB61 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		E89F1C1F2482566E003CCB61 /* FriendInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInfoViewController.swift; sourceTree = "<group>"; };
 		E8F81207247F8B0800D262E8 /* FriendList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F8120A247F8B0900D262E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8F8120C247F8B0900D262E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		E89F1C1E2482564F003CCB61 /* FriendInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E89F1C1F2482566E003CCB61 /* FriendInfoViewController.swift */,
+			);
+			path = FriendInfo;
+			sourceTree = "<group>";
+		};
 		E8F811FE247F8B0800D262E8 = {
 			isa = PBXGroup;
 			children = (
@@ -132,8 +142,9 @@
 				E8F8120C247F8B0900D262E8 /* SceneDelegate.swift */,
 				E8F8121E2480DFBC00D262E8 /* TabBarController.swift */,
 				E8F81213247F8B0A00D262E8 /* Assets.xcassets */,
-				E8F812262480E03A00D262E8 /* Contact */,
 				E8F81215247F8B0A00D262E8 /* LaunchScreen.storyboard */,
+				E8F812262480E03A00D262E8 /* Contact */,
+				E89F1C1E2482564F003CCB61 /* FriendInfo */,
 				E8F812272480E04000D262E8 /* Search */,
 				E8F812292480E04A00D262E8 /* Setting */,
 				E8F812282480E04600D262E8 /* Tag */,
@@ -293,6 +304,7 @@
 			files = (
 				E8F812212480E01400D262E8 /* SearchViewController.swift in Sources */,
 				E8F8120F247F8B0900D262E8 /* ContactViewController.swift in Sources */,
+				E89F1C202482566E003CCB61 /* FriendInfoViewController.swift in Sources */,
 				E8F8121F2480DFBC00D262E8 /* TabBarController.swift in Sources */,
 				E8F812232480E01A00D262E8 /* TagViewController.swift in Sources */,
 				E8F8120B247F8B0900D262E8 /* AppDelegate.swift in Sources */,
