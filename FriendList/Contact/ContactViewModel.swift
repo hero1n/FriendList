@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxCocoa
+import RxSwift
 
 enum ContactViewModelItemType {
     case user
@@ -28,15 +30,25 @@ class ContactViewModelUserItem: ContactViewModelItem {
     
     var users: [ContactModel.User] = []
     
+    init() {
+        users.append(ContactModel.User())
+    }
+    
     init(_ users: [ContactModel.User]) {
         self.users = users
     }
 }
 
 class ContactViewModel: NSObject {
-    var items = [ContactViewModelItem]()
+    var items: BehaviorRelay<[ContactViewModelItem]> = BehaviorRelay(value: [])
     
     override init() {
         super.init()
+        
+        self.items.accept([ContactViewModelUserItem(),ContactViewModelUserItem(),ContactViewModelUserItem(),ContactViewModelUserItem()])
+    }
+    
+    public func observeItems() -> Observable<[ContactViewModelItem]> {
+        return self.items.asObservable().observeOn(MainScheduler())
     }
 }
