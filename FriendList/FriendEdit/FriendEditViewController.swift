@@ -32,6 +32,7 @@ class FriendEditViewController: BaseController {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.lineColor = .lightGray
         $0.selectedLineColor = .black
+        $0.keyboardType = .phonePad
         $0.placeholder = "핸드폰 번호"
     }
     
@@ -39,6 +40,7 @@ class FriendEditViewController: BaseController {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.lineColor = .lightGray
         $0.selectedLineColor = .black
+        $0.keyboardType = .emailAddress
         $0.placeholder = "이메일"
     }
     
@@ -60,14 +62,25 @@ class FriendEditViewController: BaseController {
         $0.delegate = self
         $0.backgroundColor = .white
         $0.register(FriendEditTagCell.self)
+        $0.register(FriendEditTagAddCell.self)
     }
     
     lazy var tagCellLayout = TagCellLayout(alignment: .left, delegate: self)
     
-    var tags = ["123", "456", "TagTag", "tagtagtagtagtagtagtagtagtagtagtagtag"]
-    
     let oneLineHeight: CGFloat = 20.0
     let tagFont: UIFont = UIFont.systemFont(ofSize: 14)
+    
+    var user: User? {
+        didSet {
+            guard let user = self.user else { return }
+            self.nameTextField.text = user.name
+            self.phoneTextField.text = user.phone
+            self.emailTextField.text = user.email
+            self.tags = user.tags ?? []
+        }
+    }
+    
+    var tags: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

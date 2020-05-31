@@ -183,6 +183,7 @@ class FriendInfoViewController: BaseController {
     
     @objc func editInfo() {
         let friendEditViewController = FriendEditViewController()
+        friendEditViewController.user = self.user
         
         self.navigationController?.pushViewController(friendEditViewController, animated: true)
     }
