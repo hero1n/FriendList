@@ -146,11 +146,14 @@ extension FriendEditViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.tags.count
+        return self.tags.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeue(FriendEditTagCell.self, forIndexPath: indexPath) {
+        if indexPath.row == collectionView.numberOfItems(inSection: indexPath.section) - 1,
+            let cell = collectionView.dequeue(FriendEditTagAddCell.self, forIndexPath: indexPath) {
+            return cell
+        } else if let cell = collectionView.dequeue(FriendEditTagCell.self, forIndexPath: indexPath) {
             cell.setTag(self.tags[indexPath.row], withFont: self.tagFont)
             return cell
         }
@@ -165,7 +168,11 @@ extension FriendEditViewController: UICollectionViewDelegate {
 
 extension FriendEditViewController: TagCellLayoutDelegate {
     func tagCellLayoutTagSize(layout: TagCellLayout, atIndex index: Int) -> CGSize {
-        let width = self.tags[index].width(withConstrainedHeight: self.oneLineHeight, font: self.tagFont) + 46
-        return CGSize(width: width, height: self.oneLineHeight + 10)
+        if self.tags.count > index {
+            let width = self.tags[index].width(withConstrainedHeight: self.oneLineHeight, font: self.tagFont) + 46
+            return CGSize(width: width, height: self.oneLineHeight + 10)
+        }
+        
+        return CGSize(width: 24, height: self.oneLineHeight + 10)
     }
 }
