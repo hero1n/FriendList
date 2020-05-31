@@ -86,9 +86,16 @@ class FriendEditViewController: BaseController {
         super.viewDidLoad()
         
         self.configureUI()
+        self.setup()
     }
     
     func configureUI() {
+        let doneBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "checkmark"),
+                                                style: .plain,
+                                                target: self,
+                                                action: #selector(self.doneButtonClicked))
+        self.navigationItem.rightBarButtonItem = doneBarButtonItem
+        
         self.view.addSubview(self.profileImageButton)
         self.view.addSubview(self.nameTextField)
         self.view.addSubview(self.phoneTextField)
@@ -136,6 +143,45 @@ class FriendEditViewController: BaseController {
             make.right.equalToSuperview().offset(-16)
             make.top.equalTo(self.tagLabel.snp_topMargin).offset(-14)
             make.bottom.equalToSuperview().offset(-30)
+        }
+    }
+    
+    func setup() {
+        guard let user = self.user else { return }
+        self.nameTextField.text = user.name
+        self.phoneTextField.text = user.phone
+        self.emailTextField.text = user.email
+        
+        self.tagCollectionView.reloadData()
+    }
+    
+    func doneValidation() -> Bool {
+        if self.nameTextField.text?.isEmpty == true {
+            return false
+        }
+        
+        if self.phoneTextField.text?.isEmpty == true && self.emailTextField.text?.isEmpty == true {
+            return false
+        }
+        
+        return true
+    }
+    
+    @objc func doneButtonClicked() {
+        guard self.doneValidation() else { return }
+        
+        if self.user != nil {
+            self.user?.name = self.nameTextField.text
+            self.user?.phone = self.phoneTextField.text
+            self.user?.email = self.emailTextField.text
+            self.user?.tags = self.tags
+        } else {
+            UserManager.shared.users.append(User().then {
+                $0.name = self.nameTextField.text
+                $0.phone = self.phoneTextField.text
+                $0.email = self.emailTextField.text
+                $0.tags = self.tags
+            })
         }
     }
 }
