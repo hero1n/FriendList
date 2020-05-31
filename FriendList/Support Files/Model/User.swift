@@ -14,14 +14,14 @@ class User: NSObject {
     var phone: String?
     var email: String?
     var country: String?
-    var tag: [String]?
+    var tags: [String]?
     
-    func toDictionary() -> Dictionary<String, Any?> {
-        return ["name": self.name,
-            "phone": self.phone,
-            "email": self.email,
-            "country": self.country,
-            "tag": self.tag]
+    func toDictionary() -> Dictionary<String, Any> {
+        return ["name": self.name ?? "",
+            "phone": self.phone ?? "",
+            "email": self.email ?? "",
+            "country": self.country ?? "",
+            "tag": self.tags ?? []]
     }
     
     static func from(dictionary: Dictionary<String, Any?>) -> User {
@@ -30,7 +30,7 @@ class User: NSObject {
             $0.phone = dictionary["phone"] as? String
             $0.email = dictionary["email"] as? String
             $0.country = dictionary["country"] as? String
-            $0.tag = dictionary["tag"] as? [String]
+            $0.tags = dictionary["tag"] as? [String]
         }
     }
 }
