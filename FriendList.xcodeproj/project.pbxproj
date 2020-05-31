@@ -20,6 +20,7 @@
 		E89F1C2424838964003CCB61 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C2324838964003CCB61 /* UICollectionView.swift */; };
 		E89F1C262483896C003CCB61 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C252483896C003CCB61 /* UICollectionViewCell.swift */; };
 		E89F1C2824838F54003CCB61 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C2724838F54003CCB61 /* String.swift */; };
+		E89F1C2B24839B56003CCB61 /* FriendEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C2A24839B56003CCB61 /* FriendEditViewController.swift */; };
 		E8F8120B247F8B0900D262E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8120A247F8B0900D262E8 /* AppDelegate.swift */; };
 		E8F8120D247F8B0900D262E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8120C247F8B0900D262E8 /* SceneDelegate.swift */; };
 		E8F8120F247F8B0900D262E8 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8120E247F8B0900D262E8 /* ContactViewController.swift */; };
@@ -47,6 +48,7 @@
 		E89F1C2324838964003CCB61 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		E89F1C252483896C003CCB61 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
 		E89F1C2724838F54003CCB61 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		E89F1C2A24839B56003CCB61 /* FriendEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendEditViewController.swift; sourceTree = "<group>"; };
 		E8F81207247F8B0800D262E8 /* FriendList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F8120A247F8B0900D262E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8F8120C247F8B0900D262E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,14 @@
 			path = FriendInfo;
 			sourceTree = "<group>";
 		};
+		E89F1C2924839B31003CCB61 /* FriendEdit */ = {
+			isa = PBXGroup;
+			children = (
+				E89F1C2A24839B56003CCB61 /* FriendEditViewController.swift */,
+			);
+			path = FriendEdit;
+			sourceTree = "<group>";
+		};
 		E8F811FE247F8B0800D262E8 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 				E8F81213247F8B0A00D262E8 /* Assets.xcassets */,
 				E8F81215247F8B0A00D262E8 /* LaunchScreen.storyboard */,
 				E8F812262480E03A00D262E8 /* Contact */,
+				E89F1C2924839B31003CCB61 /* FriendEdit */,
 				E89F1C1E2482564F003CCB61 /* FriendInfo */,
 				E8F812272480E04000D262E8 /* Search */,
 				E8F812292480E04A00D262E8 /* Setting */,
@@ -316,6 +327,7 @@
 			files = (
 				E89F1C2824838F54003CCB61 /* String.swift in Sources */,
 				E8F812212480E01400D262E8 /* SearchViewController.swift in Sources */,
+				E89F1C2B24839B56003CCB61 /* FriendEditViewController.swift in Sources */,
 				E8F8120F247F8B0900D262E8 /* ContactViewController.swift in Sources */,
 				E89F1C202482566E003CCB61 /* FriendInfoViewController.swift in Sources */,
 				E89F1C22248387AE003CCB61 /* FriendInfoCell.swift in Sources */,
