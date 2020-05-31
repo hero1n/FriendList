@@ -12,17 +12,19 @@ import SnapKit
 
 class FriendInfoTagCell: UICollectionViewCell {
     
-    lazy var tagLabel = UILabel().then {
-        $0.layer.cornerRadius = $0.frame.size.height / 2
-        $0.backgroundColor = UIColor.systemGray
-        $0.textColor = .black
-        $0.font = UIFont.systemFont(ofSize: 14)
+    lazy var containerView = UIView().then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.backgroundColor = .white
     }
     
-    var tagText: String? {
-        didSet {
-            self.tagLabel.text = tagText
-        }
+    lazy var tagLabel = UILabel().then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.layer.masksToBounds = true
+        $0.layer.cornerRadius = 10
+        $0.backgroundColor = .lightGray
+        $0.textColor = .black
+        $0.textAlignment = .center
+        $0.font = UIFont.systemFont(ofSize: 14)
     }
 
     override func awakeFromNib() {
@@ -42,13 +44,26 @@ class FriendInfoTagCell: UICollectionViewCell {
         self.configureUI()
     }
     
+    public func setTag(_ text: String, withFont font: UIFont = UIFont.systemFont(ofSize: 14)) {
+        self.tagLabel.text = text
+        self.tagLabel.font = font
+    }
+    
     private func configureUI() {
-        self.addSubview(self.tagLabel)
+        self.containerView.addSubview(self.tagLabel)
+        self.addSubview(self.containerView)
         self.backgroundColor = .white
+        
+        self.containerView.snp.makeConstraints { (make) in
+            make.margins.equalToSuperview()
+        }
         
         self.tagLabel.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
-            make.top.bottom.left.right.equalToSuperview()
+            make.top.equalToSuperview().offset(4)
+            make.bottom.equalToSuperview().offset(-4)
+            make.left.equalToSuperview().offset(8)
+            make.right.equalToSuperview().offset(-8)
         }
     }
 }
