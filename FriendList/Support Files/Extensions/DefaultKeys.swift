@@ -10,5 +10,5 @@ import Foundation
 import SwiftyUserDefaults
 
 extension DefaultsKeys {
-    static let users = DefaultsKey<Array<Dictionary<String, Any>>?>("users")
+    var users: DefaultsKey<Array<Dictionary<String, Any>>?> { .init("users") }
 }
