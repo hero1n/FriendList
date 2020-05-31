@@ -89,3 +89,44 @@ class FriendEditTagCell: UICollectionViewCell {
         }
     }
 }
+
+class FriendEditTagAddCell: UICollectionViewCell {
+    lazy var containerView = UIView().then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    lazy var tagAddButton = UIButton().then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.setImage(UIImage(systemName: "plus"), for: .normal)
+        $0.imageView?.tintColor = .gray
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        self.configureUI()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        self.configureUI()
+    }
+    
+    private func configureUI() {
+        self.addSubview(self.containerView)
+        self.containerView.addSubview(self.tagAddButton)
+        self.backgroundColor = .white
+        
+        self.containerView.snp.makeConstraints { (make) in
+            make.margins.equalToSuperview()
+        }
+        
+        self.tagAddButton.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(4)
+            make.bottom.equalToSuperview().offset(-4)
+            make.left.equalToSuperview().offset(4)
+            make.right.equalToSuperview().offset(-4)
+        }
+    }
+}
