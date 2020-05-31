@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import TagCellLayout
 
 class FriendInfoViewController: BaseController {
     
@@ -79,12 +80,20 @@ class FriendInfoViewController: BaseController {
         $0.spacing = 16
     }
     
-    lazy var tagStackView = UIStackView().then {
+    lazy var tagCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: self.tagCellLayout).then {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.axis = .horizontal
-        $0.distribution = .fillProportionally
-        $0.spacing = 16
+        $0.dataSource = self
+        $0.delegate = self
+        $0.backgroundColor = .white
+        $0.register(FriendInfoTagCell.self)
     }
+    
+    lazy var tagCellLayout = TagCellLayout(alignment: .left, delegate: self)
+    
+    lazy var oneLineHeight: CGFloat = 20.0
+    lazy var tagFont: UIFont = UIFont.systemFont(ofSize: 14)
+    
+    var tags = ["123", "456", "TagTag", "tagtagtagtagtagtagtagtagtagtagtagtag"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,6 +102,12 @@ class FriendInfoViewController: BaseController {
     }
     
     func configureUI() {
+        let editBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "pencil"),
+                                                style: .plain,
+                                                target: self,
+                                                action: #selector(self.editInfo))
+        self.navigationItem.rightBarButtonItem = editBarButtonItem
+        
         self.view.addSubview(self.profileImageView)
         self.view.addSubview(self.nameLabel)
         self.view.addSubview(self.phoneStackView)
@@ -100,7 +115,7 @@ class FriendInfoViewController: BaseController {
         self.view.addSubview(self.countryLabel)
         self.view.addSubview(self.countryStackView)
         self.view.addSubview(self.tagLabel)
-        self.view.addSubview(self.tagStackView)
+        self.view.addSubview(self.tagCollectionView)
         
         self.phoneStackView.addArrangedSubview(self.phoneLabel)
         self.phoneStackView.addArrangedSubview(self.phoneButton)
@@ -146,11 +161,45 @@ class FriendInfoViewController: BaseController {
             make.top.equalTo(self.countryLabel.snp_bottomMargin).offset(40)
         }
 
-        self.tagStackView.snp.makeConstraints { (make) in
+        self.tagCollectionView.snp.makeConstraints { (make) in
             make.left.equalTo(self.tagLabel.snp_rightMargin).offset(16)
             make.right.equalToSuperview().offset(-16)
-            make.top.equalTo(self.tagLabel.snp_topMargin)
+            make.top.equalTo(self.tagLabel.snp_topMargin).offset(-14)
             make.bottom.equalToSuperview().offset(-30)
         }
+    }
+    
+    @objc func editInfo() {
+        
+    }
+}
+
+extension FriendInfoViewController: UICollectionViewDataSource {
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.tags.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeue(FriendInfoTagCell.self, forIndexPath: indexPath) {
+            cell.setTag(self.tags[indexPath.row], withFont: self.tagFont)
+            return cell
+        }
+        
+        return UICollectionViewCell()
+    }
+}
+
+extension FriendInfoViewController: UICollectionViewDelegate {
+    
+}
+
+extension FriendInfoViewController: TagCellLayoutDelegate {
+    func tagCellLayoutTagSize(layout: TagCellLayout, atIndex index: Int) -> CGSize {
+        let width = self.tags[index].width(withConstrainedHeight: self.oneLineHeight, font: self.tagFont) + 40
+        return CGSize(width: width, height: self.oneLineHeight + 10)
     }
 }
