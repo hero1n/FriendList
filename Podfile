@@ -9,5 +9,6 @@ target 'FriendList' do
   pod 'Then'
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
+  pod 'TagCellLayout', :git => 'https://github.com/riteshhgupta/TagCellLayout.git'
 
 end
