@@ -90,8 +90,8 @@ class FriendInfoViewController: BaseController {
     
     lazy var tagCellLayout = TagCellLayout(alignment: .left, delegate: self)
     
-    lazy var oneLineHeight: CGFloat = 20.0
-    lazy var tagFont: UIFont = UIFont.systemFont(ofSize: 14)
+    let oneLineHeight: CGFloat = 20.0
+    let tagFont: UIFont = UIFont.systemFont(ofSize: 14)
     
     var tags = ["123", "456", "TagTag", "tagtagtagtagtagtagtagtagtagtagtagtag"]
 
