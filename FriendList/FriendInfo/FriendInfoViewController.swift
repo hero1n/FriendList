@@ -93,12 +93,13 @@ class FriendInfoViewController: BaseController {
     let oneLineHeight: CGFloat = 20.0
     let tagFont: UIFont = UIFont.systemFont(ofSize: 14)
     
-    var tags = ["123", "456", "TagTag", "tagtagtagtagtagtagtagtagtagtagtagtag"]
+    var user: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.configureUI()
+        self.setup()
     }
     
     func configureUI() {
@@ -169,6 +170,17 @@ class FriendInfoViewController: BaseController {
         }
     }
     
+    func setup() {
+        guard let user = self.user else { return }
+        self.nameLabel.text = user.name
+        self.phoneLabel.text = user.phone
+        self.mailLabel.text = user.email
+        self.phoneStackView.isHidden = user.phone?.isEmpty == true
+        self.mailStackView.isHidden = user.email?.isEmpty == true
+        
+        self.tagCollectionView.reloadData()
+    }
+    
     @objc func editInfo() {
         let friendEditViewController = FriendEditViewController()
         
@@ -182,12 +194,13 @@ extension FriendInfoViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.tags.count
+        return self.user?.tags?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeue(FriendInfoTagCell.self, forIndexPath: indexPath) {
-            cell.setTag(self.tags[indexPath.row], withFont: self.tagFont)
+        if let cell = collectionView.dequeue(FriendInfoTagCell.self, forIndexPath: indexPath),
+            let tags = self.user?.tags {
+            cell.setTag(tags[indexPath.row], withFont: self.tagFont)
             return cell
         }
         
@@ -201,7 +214,11 @@ extension FriendInfoViewController: UICollectionViewDelegate {
 
 extension FriendInfoViewController: TagCellLayoutDelegate {
     func tagCellLayoutTagSize(layout: TagCellLayout, atIndex index: Int) -> CGSize {
-        let width = self.tags[index].width(withConstrainedHeight: self.oneLineHeight, font: self.tagFont) + 40
-        return CGSize(width: width, height: self.oneLineHeight + 10)
+        if let tags = self.user?.tags {
+            let width = tags[index].width(withConstrainedHeight: self.oneLineHeight, font: self.tagFont) + 40
+            return CGSize(width: width, height: self.oneLineHeight + 10)
+        }
+        
+        return CGSize.zero
     }
 }

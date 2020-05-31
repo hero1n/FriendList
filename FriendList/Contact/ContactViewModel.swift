@@ -45,7 +45,7 @@ class ContactViewModel: NSObject {
     override init() {
         super.init()
         
-        self.items.accept([ContactViewModelUserItem(),ContactViewModelUserItem(),ContactViewModelUserItem(),ContactViewModelUserItem()])
+        self.items.accept([ContactViewModelUserItem(UserManager.shared.users)])
     }
     
     public func observeItems() -> Observable<[ContactViewModelItem]> {

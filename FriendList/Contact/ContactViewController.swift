@@ -103,7 +103,12 @@ extension ContactViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        guard let item = self.viewModel.items.value[indexPath.section] as? ContactViewModelUserItem else { return }
+        let user = item.users[indexPath.row]
+        
         let friendInfoViewController = FriendInfoViewController()
+        friendInfoViewController.user = user
+        
         self.navigationController?.pushViewController(friendInfoViewController, animated: true)
     }
 }
