@@ -10,7 +10,7 @@ import UIKit
 import Then
 import SnapKit
 
-class FriendInfoTagCell: UITableViewCell {
+class FriendInfoTagCell: UICollectionViewCell {
     
     lazy var tagLabel = UILabel().then {
         $0.layer.cornerRadius = $0.frame.size.height / 2
@@ -29,12 +29,12 @@ class FriendInfoTagCell: UITableViewCell {
         // Initialization code
     }
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         self.configureUI()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -42,17 +42,11 @@ class FriendInfoTagCell: UITableViewCell {
     }
     
     private func configureUI() {
-        self.contentView.addSubview(self.tagLabel)
+        self.addSubview(self.tagLabel)
         
         self.tagLabel.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
             make.top.bottom.left.right.equalToSuperview()
         }
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }
