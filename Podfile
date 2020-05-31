@@ -10,5 +10,6 @@ target 'FriendList' do
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
   pod 'TagCellLayout', :git => 'https://github.com/riteshhgupta/TagCellLayout.git'
+  pod 'SwiftyUserDefaults', '~> 5.0'
 
 end
