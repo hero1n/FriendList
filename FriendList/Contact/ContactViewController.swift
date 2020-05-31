@@ -67,7 +67,6 @@ class ContactViewController: BaseController {
             .subscribe({ (event) in
                 guard let items = event.element else { return }
                 
-                print(debug: "test \(items.count)")
                 self.tableView.reloadData()
             })
             .disposed(by: self.disposeBag)
@@ -84,7 +83,6 @@ extension ContactViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(debug: "\(self.viewModel.items.value[indexPath.section].rowCount) \(self.viewModel.items.value.count)")
         let item = self.viewModel.items.value[indexPath.section]
         
         switch item.type {
@@ -92,7 +90,7 @@ extension ContactViewController: UITableViewDataSource {
             if let cell = tableView.dequeue(ContactUserCell.self),
                 let item = item as? ContactViewModelUserItem {
                 cell.user = item.users[indexPath.row]
-                print(debug: "test 1")
+                
                 return cell
             }
         }
@@ -102,5 +100,10 @@ extension ContactViewController: UITableViewDataSource {
 }
 
 extension ContactViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let friendInfoViewController = FriendInfoViewController()
+        self.navigationController?.pushViewController(friendInfoViewController, animated: true)
+    }
 }
