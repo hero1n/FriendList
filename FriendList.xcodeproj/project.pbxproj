@@ -24,6 +24,7 @@
 		E89F1C2E2483A445003CCB61 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C2D2483A445003CCB61 /* UnderlineTextField.swift */; };
 		E89F1C312483AF28003CCB61 /* FriendEditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C302483AF28003CCB61 /* FriendEditCell.swift */; };
 		E89F1C332483B710003CCB61 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C322483B710003CCB61 /* DefaultKeys.swift */; };
+		E89F1C352483D700003CCB61 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C342483D700003CCB61 /* UserManager.swift */; };
 		E8F8120B247F8B0900D262E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8120A247F8B0900D262E8 /* AppDelegate.swift */; };
 		E8F8120D247F8B0900D262E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8120C247F8B0900D262E8 /* SceneDelegate.swift */; };
 		E8F8120F247F8B0900D262E8 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F8120E247F8B0900D262E8 /* ContactViewController.swift */; };
@@ -55,6 +56,7 @@
 		E89F1C2D2483A445003CCB61 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
 		E89F1C302483AF28003CCB61 /* FriendEditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendEditCell.swift; sourceTree = "<group>"; };
 		E89F1C322483B710003CCB61 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
+		E89F1C342483D700003CCB61 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		E8F81207247F8B0800D262E8 /* FriendList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8F8120A247F8B0900D262E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8F8120C247F8B0900D262E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				E89F1C1A248135C8003CCB61 /* Debugging.swift */,
+				E89F1C342483D700003CCB61 /* UserManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				E8F8120F247F8B0900D262E8 /* ContactViewController.swift in Sources */,
 				E89F1C202482566E003CCB61 /* FriendInfoViewController.swift in Sources */,
 				E89F1C22248387AE003CCB61 /* FriendInfoCell.swift in Sources */,
+				E89F1C352483D700003CCB61 /* UserManager.swift in Sources */,
 				E8F8121F2480DFBC00D262E8 /* TabBarController.swift in Sources */,
 				E8F812232480E01A00D262E8 /* TagViewController.swift in Sources */,
 				E8F8120B247F8B0900D262E8 /* AppDelegate.swift in Sources */,
