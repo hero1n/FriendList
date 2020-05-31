@@ -13,7 +13,11 @@ import Then
 class UserManager {
     static let shared: UserManager = UserManager()
     
-    var users: [User] = []
+    var users: [User] = [] {
+        didSet {
+            self.syncronize()
+        }
+    }
     
     init() {
         if let userDicts = Defaults[\.users] {
@@ -21,7 +25,12 @@ class UserManager {
                 User.from(dictionary: $0)
             }
         } else {
-            Defaults[\.users] = []
+            Defaults[\.users] = [User().then {
+                $0.name = "Test"
+                $0.phone = "010-1234-5678"
+                $0.email = "example@test.com"
+                $0.tags = ["a", "bb", "ccc"]
+                }.toDictionary()]
         }
     }
     
