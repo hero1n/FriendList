@@ -75,10 +75,10 @@ class ContactUserCell: UITableViewCell, ContactCell {
         didSet {
             guard let user = self.user else { return }
             
-            print(debug: "test 2")
-            
-            self.titleLabel.text = "Test"
-            self.descriptionLabel.text = "TestTEstTest"
+            self.titleLabel.text = user.name
+            self.descriptionLabel.text = [user.phone, user.email].compactMap { $0 }.joined(separator: ", ")
+            self.phoneButton.isHidden = user.phone?.isEmpty == true
+            self.mailButton.isHidden = user.email?.isEmpty == true
             self.profileImageView.image = UIImage(systemName: "flag")
         }
     }
