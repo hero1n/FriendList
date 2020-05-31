@@ -24,4 +24,10 @@ class UserManager {
             Defaults[\.users] = []
         }
     }
+    
+    func syncronize() {
+        Defaults[\.users] = self.users.map {
+            $0.toDictionary()
+        }
+    }
 }
