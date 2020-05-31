@@ -14,7 +14,8 @@ class FriendInfoTagCell: UICollectionViewCell {
     
     lazy var tagLabel = UILabel().then {
         $0.layer.cornerRadius = $0.frame.size.height / 2
-        $0.backgroundColor = UIColor.systemGray6
+        $0.backgroundColor = UIColor.systemGray
+        $0.textColor = .black
         $0.font = UIFont.systemFont(ofSize: 14)
     }
     
@@ -43,6 +44,7 @@ class FriendInfoTagCell: UICollectionViewCell {
     
     private func configureUI() {
         self.addSubview(self.tagLabel)
+        self.backgroundColor = .white
         
         self.tagLabel.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
