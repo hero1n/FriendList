@@ -10,7 +10,7 @@
 		A38FF8028664F58244DC43E8 /* Pods_FriendList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4908F4F336AD70E705B14924 /* Pods_FriendList.framework */; };
 		E89F1C0E2480E7A5003CCB61 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C0D2480E7A5003CCB61 /* BaseViewController.swift */; };
 		E89F1C102480F579003CCB61 /* ContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C0F2480F579003CCB61 /* ContactViewModel.swift */; };
-		E89F1C12248107A2003CCB61 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C11248107A2003CCB61 /* ContactModel.swift */; };
+		E89F1C12248107A2003CCB61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C11248107A2003CCB61 /* User.swift */; };
 		E89F1C1424812236003CCB61 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C1324812236003CCB61 /* ContactCell.swift */; };
 		E89F1C1824812627003CCB61 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C1724812627003CCB61 /* UITableViewCell.swift */; };
 		E89F1C1B248135C8003CCB61 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89F1C1A248135C8003CCB61 /* Debugging.swift */; };
@@ -39,7 +39,7 @@
 		4908F4F336AD70E705B14924 /* Pods_FriendList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FriendList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89F1C0D2480E7A5003CCB61 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E89F1C0F2480F579003CCB61 /* ContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewModel.swift; sourceTree = "<group>"; };
-		E89F1C11248107A2003CCB61 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		E89F1C11248107A2003CCB61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E89F1C1324812236003CCB61 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		E89F1C1724812627003CCB61 /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		E89F1C1A248135C8003CCB61 /* Debugging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debugging.swift; sourceTree = "<group>"; };
@@ -96,6 +96,7 @@
 		E89F1C152481260B003CCB61 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				E89F1C2F2483ACF7003CCB61 /* Model */,
 				E89F1C2C2483A410003CCB61 /* Components */,
 				E89F1C19248135BC003CCB61 /* Utilities */,
 				E89F1C1624812617003CCB61 /* Extensions */,
@@ -148,6 +149,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		E89F1C2F2483ACF7003CCB61 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E89F1C11248107A2003CCB61 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E8F811FE247F8B0800D262E8 = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +201,6 @@
 			children = (
 				E8F8120E247F8B0900D262E8 /* ContactViewController.swift */,
 				E89F1C0F2480F579003CCB61 /* ContactViewModel.swift */,
-				E89F1C11248107A2003CCB61 /* ContactModel.swift */,
 				E89F1C1324812236003CCB61 /* ContactCell.swift */,
 			);
 			path = Contact;
@@ -351,7 +359,7 @@
 				E8F812252480E02200D262E8 /* SettingViewController.swift in Sources */,
 				E89F1C102480F579003CCB61 /* ContactViewModel.swift in Sources */,
 				E89F1C1824812627003CCB61 /* UITableViewCell.swift in Sources */,
-				E89F1C12248107A2003CCB61 /* ContactModel.swift in Sources */,
+				E89F1C12248107A2003CCB61 /* User.swift in Sources */,
 				E89F1C262483896C003CCB61 /* UICollectionViewCell.swift in Sources */,
 				E8F8120D247F8B0900D262E8 /* SceneDelegate.swift in Sources */,
 				E89F1C1D24814252003CCB61 /* UITableView.swift in Sources */,

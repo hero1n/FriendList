@@ -71,7 +71,7 @@ class ContactUserCell: UITableViewCell, ContactCell {
         $0.spacing = 16
     }
     
-    var user: ContactModel.User? {
+    var user: User? {
         didSet {
             guard let user = self.user else { return }
             

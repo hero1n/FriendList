@@ -28,13 +28,13 @@ class ContactViewModelUserItem: ContactViewModelItem {
         return self.users.count
     }
     
-    var users: [ContactModel.User] = []
+    var users: [User] = []
     
     init() {
-        users.append(ContactModel.User())
+        users.append(User())
     }
     
-    init(_ users: [ContactModel.User]) {
+    init(_ users: [User]) {
         self.users = users
     }
 }
